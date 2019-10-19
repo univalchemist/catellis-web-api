@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1> <%= "#{@customer.name}'s reservation has been edited." %> </h1>
+    <h3> Contact Information: </h3>
+    <p>
+      <%= "Email: #{@customer.email}" if @customer.email %>
+    </p>
+    <p>
+      <%= "Phone Number: #{number_to_phone(@customer.phone_number)}" if @customer.phone_number %>
+    </p>
+    <%= link_to "View Customer", "http://localhost:4567/rm/customers/#{@customer.id}" %>
+
+    <h3> Reservation Edits: </h3>
+    <div>
+      <% @changes.each do |change| %>
+      <p>
+        <% case change.first.humanize %>
+        <% when "Scheduled start at" %>
+          <%= "Scheduled start at: #{change.last.first.strftime("%B %e, %Y %I:%M%P")} to #{change.last.last.strftime("%B %e, %Y %I:%M%P")}" %>
+        <% when "Scheduled end at" %>
+        <% else %>
+          <%= "#{change.first.humanize}: #{change.last.first} to #{change.last.last}" %>
+        <% end %>
+      </p>
+      <% end %>
+    </div>
+    <%= link_to "View Reservation", "http://localhost:4567/rm/rsvp_list/reservation/#{@reservation.id}/edit" %>
+  </body>
+</html>

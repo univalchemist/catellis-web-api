@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1> <%= "#{@customer.name}, your reservation at #{@restaurant.name} has been made!" %> </h1>
+    <%= "Date & time: #{@reservation.scheduled_start_at.in_time_zone(@restaurant.timezone_name).strftime("%B %e, %Y %I:%M%P")}" %>
+
+    <h3> <%= "#{@restaurant.email_confirmation_notes}" %> </h3>
+  </body>
+</html>

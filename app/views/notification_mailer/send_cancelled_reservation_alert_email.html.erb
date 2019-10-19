@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>
+      <%= "#{@customer.name}'s reservation has been cancelled." %>
+    </h1>
+    <% if @reservation.reservation_status == "canceled_guest" %>
+      <small> Cancelled by: Guest </small>
+    <% elsif @reservation.reservation_status == "canceled_restaurant" %>
+      <small> Cancelled by: Restaurant </small>
+      <div>
+        <small> Employee: <%= @reservation.employee %> </small>
+      </div>
+    <% end %>
+
+    <h3> Guest Information: </h3>
+    <p>
+      <%= "Email: #{@customer.email}" if @customer.email %>
+    </p>
+    <p>
+      <%= "Phone Number: #{number_to_phone(@customer.phone_number)}" if @customer.phone_number %>
+    </p>
+    <%= link_to "View Customer", "http://localhost:4567/rm/customers/#{@customer.id}" %>
+  </body>
+</html>

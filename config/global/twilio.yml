@@ -1,0 +1,4 @@
+default:
+  account_sid: <%= ENV['TWILIO_ACCOUNT_SID'] %>
+  auth_token: <%= ENV['TWILIO_AUTH_TOKEN'] %>
+  messaging_service_sid: <%= ENV['TWILIO_MESSAGE_SERVICE_SID'] %>

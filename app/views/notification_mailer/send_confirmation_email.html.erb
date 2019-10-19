@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1> <%= "#{@customer.name}, your reservation at #{@restaurant.name} has been made!" %> </h1>
+    <p><%= "We look forward to seeing you on #{@reservation.scheduled_start_at.in_time_zone(@restaurant.timezone_name).strftime("%B %e, %Y %I:%M%P")}." %></p>
+    <p><%= "Our location is #{@restaurant.location}" %></p>
+    <p><%= "If you have any questions or concerns about your reservation call us at #{@restaurant.phone_number}"%></p>
+  </body>
+</html>
