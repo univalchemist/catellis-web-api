@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190921154029) do
+ActiveRecord::Schema.define(version: 20191025131825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20190921154029) do
     t.datetime "updated_at", null: false
     t.integer "table_rotation", default: 0, null: false
     t.boolean "blocked", default: false
+    t.string "table_reservation_status", default: ""
     t.index ["floor_plan_id"], name: "index_floor_plan_tables_on_floor_plan_id"
   end
 
@@ -105,6 +106,7 @@ ActiveRecord::Schema.define(version: 20190921154029) do
     t.string "employee"
     t.string "tags"
     t.float "override_turn_time"
+    t.string "seated_at", default: ""
     t.index ["canceled_by_id"], name: "index_reservations_on_canceled_by_id"
     t.index ["customer_id"], name: "index_reservations_on_customer_id"
     t.index ["floor_plan_table_id"], name: "index_reservations_on_floor_plan_table_id"

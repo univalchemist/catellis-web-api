@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
 
   post "/graphql", to: "graphql#execute"
+  post "/sms", to: "application#sms"
 end

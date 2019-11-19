@@ -42,7 +42,8 @@ gem 'factory_bot_rails', '~> 4.0'
 gem 'faker', '~> 1.8'
 
 # Twilio
-gem 'twilio-ruby'
+gem 'twilio-ruby', '5.28.0'
+gem 'jwt', '2.1.0'
 
 # Timezone support
 gem 'timezone', '~> 1.0'

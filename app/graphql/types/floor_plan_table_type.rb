@@ -6,6 +6,7 @@ Types::FloorPlanTableType = GraphQL::ObjectType.define do
   field :floor_plan, !Types::FloorPlanType
   field :x, !types.Int
   field :y, !types.Int
+  field :table_reservation_status, !types.String
   field :table_number, !types.String
   field :table_size, !types.Int
   field :table_type, !types.String

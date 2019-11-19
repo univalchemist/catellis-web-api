@@ -12,14 +12,33 @@ https://docs.docker.com/docker-for-mac/install/
 #### Windows
 https://docs.docker.com/docker-for-windows/install/
 
-#### Linux
-https://www.linux.com/tutorials/how-install-docker-ce-your-desktop/
+#### Linux: *NOTE:* As of the date of writing these instructions on 10/31/2019, this will work only for Ubuntu versions 18.04 - 19.04 -- this is subject to change.
+## 1.) Follow the installation *AND* post-installation instructions very carefully.
+https://docs.docker.com/install/linux/docker-ce/ubuntu/
+https://docs.docker.com/install/linux/linux-postinstall/
 
-Once Docker is installed you'll need to run:
+## 2.) Install docker-compose for Linux:
+In the terminal, type the command `sudo apt install docker-compose`
+
+## 3.) Install RVM for Linux:
+Visit this link and follow the instructions for installation: https://github.com/rvm/ubuntu_rvm
+*After installation, reboot your computer*
+Open a terminal and type `rvm install 2.4.3`
+*Reboot your computer again*
+
+## 4.) Install Postgres for Linux:
+After rebooting, open a terminal once again and type the following commands:
+`sudo apt-get install libpq-dev`
+`gem install pg`
+
+
+#### After installation
+
+Once Docker is installed, you'll need to run:
 `docker-compose build`
 
 ## Start Docker
-Note: To run this application you'll need multiple tabs open in a terminal
+Note: To run this application, you'll need multiple tabs open in a terminal
 
 `docker-compose up`
 

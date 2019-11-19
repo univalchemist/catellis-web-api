@@ -17,6 +17,7 @@ Types::ReservationType = GraphQL::ObjectType.define do
       obj.scheduled_end_at.iso8601
     }
   end
+  field :seated_at, !types.String
   field :party_size, !types.Int
   field :party_notes, types.String
   field :reservation_status, !types.String

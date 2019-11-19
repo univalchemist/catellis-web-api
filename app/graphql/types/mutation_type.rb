@@ -16,6 +16,7 @@ Types::MutationType = GraphQL::ObjectType.define do
   field :createReservation, function: Resolvers::CreateReservation.new
   field :createReservationFuzzyCustomer, function: Resolvers::CreateReservationFuzzyCustomer.new
   field :createReservationGuestCustomer, function: Resolvers::CreateReservationGuestCustomer.new
+  field :createReservationAnyCustomer, function: Resolvers::CreateReservationAnyCustomer.new
   field :editReservation, function: Resolvers::EditReservation.new
   field :destroyReservation, function: Resolvers::DestroyReservation.new
 

@@ -20,6 +20,7 @@ class Resolvers::EditReservation < GraphQL::Function
         :party_size,
         :scheduled_start_at,
         :scheduled_end_at,
+        :seated_at,
         :party_notes,
         :reservation_status,
         :floor_plan_table_id,

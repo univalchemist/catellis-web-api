@@ -27,6 +27,8 @@ class Reservations::CreateReservationService < BaseService
           reservation: reservation
         )
       rescue Twilio::REST::RestError => error
+        puts "Error for Twilio"
+        puts error.inspect
         # TODO: Respond with mixed success/error message.
       end
     end

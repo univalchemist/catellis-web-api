@@ -21,6 +21,7 @@ class Resolvers::CreateFloorPlan < GraphQL::Function
         :id,
         :x,
         :y,
+        :table_reservation_status,
         :table_number,
         :table_size,
         :table_shape,

@@ -35,6 +35,16 @@ class Reservation < ApplicationRecord
 
   belongs_to :canceled_by, class_name: 'User', optional: true
 
+  def cancel(type=:canceled_guest)
+    update(reservation_status: type)
+  end
+
+  def canceled?
+    reservation_status == "canceled_guest" ||
+    reservation_status == "canceled_restaurant" ||
+    reservation_status == "complete"
+  end
+
   def local_scheduled_start_at
     local_timezone.utc_to_local(scheduled_start_at)
   end
